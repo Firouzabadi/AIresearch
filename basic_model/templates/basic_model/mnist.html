@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<h1>Digit Handler</h1>
+<img src="{% static 'basic_model/img/profile1.png' %}" alt="my pic1"/>
+<h3>welcome! answer the questions about digits shown blow. monitor that how acuuracy of the program improves everytime </h3>
+
+<form action="../setlabel/" method="get">
+
+<img src= "{{ mnistimage.image.url }}" height="100" width="100" >
+<p> the label predicted by system: {{ mnistimage.get_predicted_label_display }} </p>
+<p> what do you think the label is:</p>
+
+
+  <input type="radio" name="trained_label" value="{{ mnistimage.label_choice.0.0 }}" >
+    {{ mnistimage.label_choice.0.1 }}
+    <input type="radio" name="trained_label" value="{{ mnistimage.label_choice.1.0 }}" >
+    {{ mnistimage.label_choice.1.1 }}
+    <input type="text" name="imageid" style="display: none" value="{{ mnistimage.imageid }}" >
+
+    <input type="submit" value="Submit" >
+
+</form>
+
+</body>
+</html>
