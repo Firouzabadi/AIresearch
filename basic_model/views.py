@@ -45,13 +45,3 @@ def train():
     return image_list
 
 
-
-
-
-
-
-
-def predict(Mnistimage):
-    train_set = Mnistimage.objects.filter(imageid )
-    train_set.predicted
-    pass
